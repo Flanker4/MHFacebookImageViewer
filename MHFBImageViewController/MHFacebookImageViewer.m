@@ -249,8 +249,6 @@ static const CGFloat kMinImageScale = 1.0f;
                 [_viewController.view removeFromSuperview];
                 [_viewController removeFromParentViewController];
                 _senderView.alpha = 1.0f;
-                [UIApplication sharedApplication].statusBarHidden = NO;
-                [UIApplication sharedApplication].statusBarStyle = _statusBarStyle;
                 _isAnimating = NO;
                 if(_closingBlock)
                     _closingBlock();
@@ -499,8 +497,6 @@ static const CGFloat kMinImageScale = 1.0f;
 
 - (void)loadView
 {
-    _statusBarStyle = [[UIApplication sharedApplication] statusBarStyle];
-    [UIApplication sharedApplication].statusBarHidden = YES;
     CGRect windowBounds = [[UIScreen mainScreen] bounds];
 
     // Compute Original Frame Relative To Screen
